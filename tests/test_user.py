@@ -1,9 +1,8 @@
 import pytest
 import requests
 
-from discord_rest.models import User
 from discord_rest import Client, GetUserRequest
-
+from discord_rest.models import User
 
 with open("../.env") as f:
     token = f.read().strip()

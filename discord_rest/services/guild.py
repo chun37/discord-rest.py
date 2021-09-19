@@ -1,8 +1,8 @@
 import typedjson
 
 from ..http import HTTPClient, HTTPRqeuest
+from ..models import Guild, PartialGuild
 from ..request import GetGuildRequest
-from ..models import Guild
 
 
 class GuildService:
@@ -16,6 +16,16 @@ class GuildService:
         res = self._http.send(req)
 
         result = typedjson.decode(Guild, res.json())
+        if isinstance(result, typedjson.DecodingError):
+            raise result
+
+        return result
+
+    def get_current_user_guilds(self) -> list[PartialGuild]:
+        req = HTTPRqeuest("GET", "/users/@me/guilds")
+        res = self._http.send(req)
+
+        result = typedjson.decode(list[PartialGuild], res.json())
         if isinstance(result, typedjson.DecodingError):
             raise result
 

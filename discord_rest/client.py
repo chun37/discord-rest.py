@@ -1,5 +1,5 @@
 from .http import HTTPClient
-from .models import Guild, User
+from .models import Guild, PartialGuild, User
 from .request import GetGuildRequest, GetUserRequest
 from .services import GuildService, UserService
 
@@ -9,6 +9,9 @@ class Client:
         self._http = HTTPClient(token)
         self._guild = GuildService(self._http)
         self._user = UserService(self._http)
+
+    def get_current_user_guilds(self) -> list[PartialGuild]:
+        return self._guild.get_current_user_guilds()
 
     def get_guild(self, data: GetGuildRequest) -> Guild:
         return self._guild.get_guild(data)

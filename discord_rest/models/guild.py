@@ -1,14 +1,14 @@
 from dataclasses import dataclass
-from typing import Optional, Any
+from typing import Any, Optional
 
-from .emoji import Emoji
-from .sticker import Sticker
-from .role import Role
-from .voice import VoiceState
-from .user import User
 from .channel import Channel
-from .stage_instance import StageInstance
+from .emoji import Emoji
 from .member import Member
+from .role import Role
+from .stage_instance import StageInstance
+from .sticker import Sticker
+from .user import User
+from .voice import VoiceState
 
 
 @dataclass
@@ -79,3 +79,13 @@ class Guild:
     stickers: Optional[list[Sticker]]
 
     nsfw: bool  # undocumented
+
+
+@dataclass
+class PartialGuild:
+    id: str
+    name: str
+    icon: Optional[str]
+    owner: Optional[bool]
+    permissions: Optional[str]
+    features: list[str]

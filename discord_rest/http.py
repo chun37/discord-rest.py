@@ -1,7 +1,8 @@
-from typing import Literal, Union
 from dataclasses import dataclass, field
+from typing import Literal, Union
 
 import requests
+
 from . import __version__
 
 
