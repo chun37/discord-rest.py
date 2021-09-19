@@ -2,7 +2,7 @@ import typedjson
 
 from ..http import HTTPClient, HTTPRqeuest
 from ..request import GetGuildRequest
-from ..models.guild import Guild
+from ..models import Guild
 
 
 class GuildService:
