@@ -1,9 +1,7 @@
-from .models.guild import Guild
 from .http import HTTPClient
-from .request import GetGuildRequest
-from .services.guild import GuildService
-from .services.user import UserService
-from .models.user import User
+from .models import Guild, User
+from .request import GetGuildRequest, GetUserRequest
+from .services import GuildService, UserService
 
 
 class Client:
@@ -17,3 +15,6 @@ class Client:
 
     def get_current_user(self) -> User:
         return self._user.get_current_user()
+
+    def get_user(self, data: GetUserRequest) -> User:
+        return self._user.get_user(data)
