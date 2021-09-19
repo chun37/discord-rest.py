@@ -1,0 +1,2 @@
+class Snowflake:
+    pass

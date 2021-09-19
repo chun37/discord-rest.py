@@ -12,6 +12,7 @@ black = "*"
 pylint = "*"
 mypy = "*"
 isort = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.9"
