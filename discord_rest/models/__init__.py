@@ -1,6 +1,6 @@
 from .channel import Channel, Overwrite, ThreadMember, ThreadMetadata
 from .emoji import Emoji
-from .guild import Guild, WekcomeScreenChannel, WelcomeScreen
+from .guild import Guild, WelcomeScreenChannel, WelcomeScreen
 from .member import Member
 from .role import Role, Tag
 from .stage_instance import StageInstance
