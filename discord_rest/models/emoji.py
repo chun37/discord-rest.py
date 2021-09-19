@@ -1,12 +1,16 @@
 from dataclasses import dataclass
+from typing import Optional
+
+from .user import User
 
 
 @dataclass(frozen=True)
 class Emoji:
-    name: str
-    roles: list[str]
     id: str
-    require_colons: bool
-    managed: bool
-    animated: bool
-    available: bool
+    name: str
+    roles: Optional[list[str]]
+    user: Optional[User]
+    require_colons: Optional[bool]
+    managed: Optional[bool]
+    animated: Optional[bool]
+    available: Optional[bool]
