@@ -15,7 +15,7 @@ client = Client(token)
 @pytest.mark.parametrize(
     "guild_id", ["772714095035154434", "605651676572942336", "414625643045584906"]
 )
-def test_decode_guild(
+def test_get_guild(
     guild_id,
 ):
 
@@ -24,6 +24,6 @@ def test_decode_guild(
     assert isinstance(result, Guild)
 
 
-def test_not_found_guild():
+def test_get_not_found_guild():
     with pytest.raises(requests.exceptions.HTTPError):
         client.get_guild(GetGuildRequest("0"))
